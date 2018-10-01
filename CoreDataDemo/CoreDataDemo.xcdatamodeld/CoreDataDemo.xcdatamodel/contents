@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BankDetails" representedClassName=".BankDetails" syncable="YES">
+        <attribute name="bankname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NameDetails" inverseName="bank" inverseEntity="NameDetails" syncable="YES"/>
+    </entity>
+    <entity name="NameDetails" representedClassName=".NameDetails" syncable="YES">
+        <attribute name="bankcode" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BankDetails" inverseName="user" inverseEntity="BankDetails" syncable="YES"/>
+        <fetchedProperty name="myname" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="NameDetails" predicateString="SELF.name = &quot;ujesh&quot;"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="BankDetails" positionX="279" positionY="36" width="128" height="90"/>
+        <element name="NameDetails" positionX="-63" positionY="-18" width="128" height="119"/>
+    </elements>
+</model>
